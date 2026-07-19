@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const myPhotos = [
 "https://i.postimg.cc/44jySvbD/IMG-20260719-WA0016.jpg",
-"https://i.postimg.cc/FFwzBbgq/IMG-20260719-WA0017.jpg",
+"https://i.postimg.cc/6q2ttSwB/Screenshot-2026-07-19-23-24-42-856-com-miui-gallery.jpg",
 "https://i.postimg.cc/VsJ5gZMb/IMG-20260719-WA0018.jpg",
 "https://i.postimg.cc/nVXM2S7K/IMG-20260719-WA0019.jpg",
 "https://i.postimg.cc/CMRd7rDq/IMG-20260719-WA0020.jpg",
