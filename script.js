@@ -2,41 +2,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordModal = document.getElementById('passwordModal');
     const welcomeScreen = document.getElementById('welcomeScreen');
     const mainContent = document.getElementById('mainContent');
-    const passwordInput = document.getElementById('passwordInput');
     const submitPassword = document.getElementById('submitPassword');
 
+    // Fungsi klik tombol langsung masuk tanpa password
     submitPassword.addEventListener('click', function() {
-        if (passwordInput.value.toLowerCase() === 'babycakes') {
-            passwordModal.style.opacity = '0';
+        passwordModal.style.opacity = '0';
+        setTimeout(() => {
+            passwordModal.style.display = 'none';
+            welcomeScreen.style.display = 'flex';
+            
             setTimeout(() => {
-                passwordModal.style.display = 'none';
-                welcomeScreen.style.display = 'flex';
-                
+                welcomeScreen.style.opacity = '0';
                 setTimeout(() => {
-                    welcomeScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        welcomeScreen.style.display = 'none';
-                        mainContent.style.display = 'block';
-                    }, 800);
-                }, 2500);
-            }, 500);
-        } else {
-            passwordInput.value = '';
-            passwordInput.placeholder = 'Try again, my love...';
-            passwordInput.style.borderColor = '#ff4d4d';
-            setTimeout(() => {
-                passwordInput.style.borderColor = '#ffb7c5';
-                passwordInput.placeholder = 'Our special word...';
-            }, 1500);
-        }
+                    welcomeScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 800);
+            }, 2500);
+        }, 500);
     });
 
-    passwordInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            submitPassword.click();
-        }
-    });
-
+    // Logika untuk navigasi Tab (Surat, Musik, Notes, Galeri)
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -54,11 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Logika untuk membuka/menutup surat cinta
     const loveLetter = document.getElementById('loveLetter');
     loveLetter.addEventListener('click', function() {
         this.classList.toggle('expanded');
     });
 
+    // Fungsi untuk membuat elemen hati dan beruang melayang
     function addFloatingElements() {
         for (let i = 0; i < 15; i++) {
             const heart = document.createElement('div');
