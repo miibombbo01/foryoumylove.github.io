@@ -86,6 +86,13 @@ const myCaptions = [
 
     document.body.classList.remove("pink-theme");
     document.body.classList.add("blue-theme");
+        document.querySelectorAll(".heart").forEach(heart => {
+    heart.innerHTML = "💙";
+});
+
+document.querySelectorAll(".teddy-bear").forEach(teddy => {
+    teddy.innerHTML = "✨";
+});
         galleryTitle.textContent = "Piece of Mine 💙";
 
     galleryImages.forEach((img, index) => {
@@ -102,6 +109,13 @@ setTimeout(() => {
 
     document.body.classList.remove("blue-theme");
     document.body.classList.add("pink-theme");
+        document.querySelectorAll(".heart").forEach(heart => {
+    heart.innerHTML = "❤️";
+});
+
+document.querySelectorAll(".teddy-bear").forEach(teddy => {
+    teddy.innerHTML = "🧸";
+});
         galleryTitle.textContent = "Pictures of You 🌷";
 
     galleryImages.forEach((img, index) => {
@@ -151,7 +165,7 @@ setTimeout(() => {
         for (let i = 0; i < 15; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = '<span class="floating-heart">❤️</span>';
+            heart.innerHTML = "❤️";
             heart.style.left = Math.random() * 100 + '%';
             heart.style.top = Math.random() * 100 + '%';
             heart.style.animationDelay = Math.random() * 5 + 's';
