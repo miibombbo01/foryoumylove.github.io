@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inisialisasi element audio latar belakang
     const backsound = document.getElementById('backsound');
     const galleryImages = document.querySelectorAll(".gallery-item img");
+    const galleryCaptions = document.querySelectorAll(".gallery-item p");
     document.body.classList.add("pink-theme");
 
     // Lagu default saat pertama kali klik Open Letter (Only - Leehi)
@@ -27,6 +28,24 @@ const myPhotos = [
 "https://i.postimg.cc/nVXM2S7K/IMG-20260719-WA0019.jpg",
 "https://i.postimg.cc/CMRd7rDq/IMG-20260719-WA0020.jpg",
 "https://i.postimg.cc/fWVkCqXd/IMG-20260719-WA0021.jpg"
+];
+
+    const herCaptions = [
+"The smile that always brightens my day. ☀️",
+"I still smile every time I look at this picture. 🤍",
+"I don't know how, but you always look adorable. 🤏❤️",
+"This might be one of my favorite photos of you. 🌸",
+"You're prettier than you think you are. ✨",
+"I hope this gallery keeps growing with us. ❤️"
+];
+
+const myCaptions = [
+"Trying my best to become someone worthy of you. 💙",
+"This is the guy who misses you every day. 🌌",
+"I smiled because I was thinking about you. 🤍",
+"I hope you always see me with love. ☁️",
+"I'll keep working hard for our future. 💪",
+"Still with you. Always. 💙"
 ];
 
     // Fungsi klik tombol Open Letter
@@ -68,8 +87,9 @@ const myPhotos = [
     document.body.classList.add("blue-theme");
 
     galleryImages.forEach((img, index) => {
-        img.src = myPhotos[index];
-    });
+    img.src = myPhotos[index];
+    galleryCaptions[index].textContent = myCaptions[index];
+});
 
 } else {
 
@@ -77,8 +97,9 @@ const myPhotos = [
     document.body.classList.add("pink-theme");
 
     galleryImages.forEach((img, index) => {
-        img.src = herPhotos[index];
-    });
+    img.src = herPhotos[index];
+    galleryCaptions[index].textContent = herCaptions[index];
+});
 
 }
 
