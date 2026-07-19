@@ -13,23 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lagu default saat pertama kali klik Open Letter (Only - Leehi)
     const defaultSongSrc = "https://files.catbox.moe/exzzyd.mp3";
-    const herPhotos = [
-"https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg",
-"https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg",
-"https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg",
-"https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg",
-"https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg",
-"https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg"
-];
+        const herPhotos = [
+        "cewek1.jpg",
+        "cewek2.jpg",
+        "cewek3.jpg",
+        "cewek4.jpg",
+        "cewek5.jpg",
+        "cewek6.jpg"
+    ];
 
-const myPhotos = [
-"https://i.postimg.cc/44jySvbD/IMG-20260719-WA0016.jpg",
-"https://i.postimg.cc/6q2ttSwB/Screenshot-2026-07-19-23-24-42-856-com-miui-gallery.jpg",
-"https://i.postimg.cc/VsJ5gZMb/IMG-20260719-WA0018.jpg",
-"https://i.postimg.cc/nVXM2S7K/IMG-20260719-WA0019.jpg",
-"https://i.postimg.cc/CMRd7rDq/IMG-20260719-WA0020.jpg",
-"https://i.postimg.cc/fWVkCqXd/IMG-20260719-WA0021.jpg"
-];
+    const myPhotos = [
+        "cowok1.jpg",
+        "cowok2.jpg",
+        "cowok3.jpg",
+        "cowok4.jpg",
+        "cowok5.jpg",
+        "cowok6.jpg"
+    ];
+
 
     const herCaptions = [
 "The smile that always brightens my day. ☀️",
