@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const backsound = document.getElementById('backsound');
     const galleryImages = document.querySelectorAll(".gallery-item img");
     const galleryCaptions = document.querySelectorAll(".gallery-item p");
+    const galleryTitle = document.querySelector("#gallery h2");
     document.body.classList.add("pink-theme");
 
     // Lagu default saat pertama kali klik Open Letter (Only - Leehi)
@@ -85,9 +86,15 @@ const myCaptions = [
 
     document.body.classList.remove("pink-theme");
     document.body.classList.add("blue-theme");
+        galleryTitle.textContent = "Piece of Mine 💙";
 
     galleryImages.forEach((img, index) => {
+    img.style.opacity = "0";
+
+setTimeout(() => {
     img.src = myPhotos[index];
+    img.style.opacity = "1";
+},250);
     galleryCaptions[index].textContent = myCaptions[index];
 });
 
@@ -95,9 +102,15 @@ const myCaptions = [
 
     document.body.classList.remove("blue-theme");
     document.body.classList.add("pink-theme");
+        galleryTitle.textContent = "Pictures of You 🌷";
 
     galleryImages.forEach((img, index) => {
+    img.style.opacity = "0";
+
+setTimeout(() => {
     img.src = herPhotos[index];
+    img.style.opacity = "1";
+},250);
     galleryCaptions[index].textContent = herCaptions[index];
 });
 
