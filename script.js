@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inisialisasi element audio latar belakang
     const backsound = document.getElementById('backsound');
+    document.body.classList.add("pink-theme");
 
     // Lagu default saat pertama kali klik Open Letter (Only - Leehi)
     const defaultSongSrc = "https://files.catbox.moe/exzzyd.mp3";
@@ -37,12 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function() {
             const newSrc = this.getAttribute('data-src');
             if (newSrc) {
-                backsound.src = newSrc;
-                backsound.play().catch(error => console.log("Playback error:", error));
-                
-                // Efek visual penanda lagu aktif
-                songItems.forEach(s => s.style.background = 'rgba(255, 255, 255, 0.6)');
-                this.style.background = '#ffe6ea';
+
+    backsound.pause();
+    backsound.src = newSrc;
+    backsound.load();
+    backsound.play().catch(error => console.log("Playback error:", error));
+
+    if (newSrc.includes("fv1ic4.mp3")) {
+        document.body.classList.remove("pink-theme");
+        document.body.classList.add("blue-theme");
+    } else {
+        document.body.classList.remove("blue-theme");
+        document.body.classList.add("pink-theme");
+    }
+
+    songItems.forEach(s => s.style.background = 'rgba(255, 255, 255, 0.6)');
+    this.style.background = '#ffe6ea';
             }
         });
     });
