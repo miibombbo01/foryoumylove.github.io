@@ -9,6 +9,52 @@
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+
+    <!-- JALUR PAKSA CSS: Ini akan memaksa perubahan jarak, baris, dan caption muncul -->
+    <style>
+        /* Paksa jarak antar baris di dalam konten surat cinta */
+        .letter-content p {
+            line-height: 2.3 !important;
+            margin-bottom: 15px !important;
+        }
+
+        /* Paksa judul Catatan Kecil agar punya jarak ke bawah */
+        #notes h2 {
+            margin-bottom: 45px !important;
+        }
+
+        /* Paksa judul Galeri agar punya jarak ke bawah */
+        #gallery h2 {
+            margin-bottom: 45px !important;
+        }
+
+        /* Buat layout galeri vertikal satu per satu agar caption tidak menumpuk */
+        .gallery {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important; /* Jarak antar kotak foto */
+            align-items: center !important;
+        }
+
+        /* Atur pembungkus foto dan caption */
+        .gallery-item {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        /* Paksa tulisan caption di bawah foto agar muncul, miring, dan menggunakan Montserrat */
+        .gallery-item p {
+            display: block !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-style: italic !important;
+            font-size: 0.95rem !important;
+            margin-top: 15px !important;
+            color: #555 !important;
+            text-align: center !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,15 +90,13 @@
 
         <div class="content-area">
             <div class="tab-content active" id="love-letter">
-                <!-- 3. Mengubah judul menjadi My Little Pony -->
                 <h2>My Little Pony</h2>
                 <div class="letter" id="loveLetter">
                     <div class="letter-header">
                         <h3>A Letter For You</h3>
                         <span>👇 Click to open</span>
                     </div>
-                    <!-- 3. Memberikan line-height: 1.8 agar jarak antar baris teks lebih renggang -->
-                    <div class="letter-content" style="line-height: 1.8;">
+                    <div class="letter-content">
                         <p>Hai Sayangggg,</p>
                         <p>Aku ga jago ngoding. Ini pertama kalinya aku belajar HTML cuma karena pengen bikin sesuatu buat kamu. Jadi kalau masih jelek, jangan ketawain ya. 🤏.</p>
                         <p>I cherish every moment we spend together, from our silly inside jokes to our deep
@@ -69,7 +113,6 @@
             <div class="tab-content" id="music">
                 <h2>Lagu yg ngingetin aku sama kamu</h2>
                 
-                <!-- Lagu 1: Only - Leehi -->
                 <div class="song" data-src="https://files.catbox.moe/exzzyd.mp3" style="cursor: pointer; transition: all 0.2s;">
                     <div class="song-icon">🎵</div>
                     <div class="song-info">
@@ -78,7 +121,6 @@
                     </div>
                 </div>
                 
-                <!-- Lagu 2: Still With You - Jungkook -->
                 <div class="song" data-src="https://files.catbox.moe/fv1ic4.mp3" style="cursor: pointer; transition: all 0.2s;">
                     <div class="song-icon">🎵</div>
                     <div class="song-info">
@@ -89,8 +131,7 @@
             </div>
 
             <div class="tab-content" id="notes">
-                <!-- 2. Menambahkan margin-bottom agar judul dan kotak catatan tidak terlalu rapat -->
-                <h2 style="margin-bottom: 25px;">Catatan kecil</h2>
+                <h2>Catatan kecil</h2>
                 <div class="note">
                     <p>🤗Semangat yaa sekolahnya</p>
                 </div>
@@ -102,11 +143,50 @@
                 </div>
             </div>
 
-            <!-- Bagian galeri -->
+            <!-- Bagian galeri dengan teks caption yang sudah dikunci CSS di atas -->
             <div class="tab-content" id="gallery">
-                <!-- 1. Menambahkan margin-bottom agar judul ke area foto memiliki jarak renggang -->
-                <h2 style="margin-bottom: 30px;">Pictures of You 🌷</h2>
+                <h2>Pictures of You 🌷</h2>
                 <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">
+                        <p>You look so beautiful here ✨</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg">
+                        <p>My absolute favorite person ❤️</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg">
+                        <p>Thinking of you every single day 🌸</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg">
+                        <p>Cutest person in the universe 🧸</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg">
+                        <p>Omaga you look so stunning 💖</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">
+                        <p>Forever and always yours 🔐</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elemen dekorasi melayang -->
+    <div class="heart" style="top: 10%; left: 5%;">❤️</div>
+    <div class="heart" style="top: 20%; right: 10%;">❤️</div>
+    <div class="heart" style="bottom: 15%; left: 15%;">❤️</div>
+    <div class="teddy-bear" style="top: 30%; left: 10%;">🧸</div>
+    <div class="teddy-bear" style="bottom: 10%; right: 5%;">🧸</div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
                     <!-- 1. Setiap item foto kini memiliki caption italic bergaya Montserrat di bawahnya -->
                     <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">
