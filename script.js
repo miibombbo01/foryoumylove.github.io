@@ -6,10 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inisialisasi element audio latar belakang
     const backsound = document.getElementById('backsound');
+    const galleryImages = document.querySelectorAll(".gallery-item img");
     document.body.classList.add("pink-theme");
 
     // Lagu default saat pertama kali klik Open Letter (Only - Leehi)
     const defaultSongSrc = "https://files.catbox.moe/exzzyd.mp3";
+    const herPhotos = [
+"https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg",
+"https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg",
+"https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg",
+"https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg",
+"https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg",
+"https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg"
+];
+
+const myPhotos = [
+"https://i.postimg.cc/44jySvbD/IMG-20260719-WA0016.jpg",
+"https://i.postimg.cc/FFwzBbgq/IMG-20260719-WA0017.jpg",
+"https://i.postimg.cc/VsJ5gZMb/IMG-20260719-WA0018.jpg",
+"https://i.postimg.cc/nVXM2S7K/IMG-20260719-WA0019.jpg",
+"https://i.postimg.cc/CMRd7rDq/IMG-20260719-WA0020.jpg",
+"https://i.postimg.cc/fWVkCqXd/IMG-20260719-WA0021.jpg"
+];
 
     // Fungsi klik tombol Open Letter
     submitPassword.addEventListener('click', function() {
@@ -45,12 +63,24 @@ document.addEventListener('DOMContentLoaded', function() {
     backsound.play().catch(error => console.log("Playback error:", error));
 
     if (newSrc.includes("fv1ic4.mp3")) {
-        document.body.classList.remove("pink-theme");
-        document.body.classList.add("blue-theme");
-    } else {
-        document.body.classList.remove("blue-theme");
-        document.body.classList.add("pink-theme");
-    }
+
+    document.body.classList.remove("pink-theme");
+    document.body.classList.add("blue-theme");
+
+    galleryImages.forEach((img, index) => {
+        img.src = myPhotos[index];
+    });
+
+} else {
+
+    document.body.classList.remove("blue-theme");
+    document.body.classList.add("pink-theme");
+
+    galleryImages.forEach((img, index) => {
+        img.src = herPhotos[index];
+    });
+
+}
 
     songItems.forEach(s => s.style.background = 'rgba(255, 255, 255, 0.6)');
     this.style.background = '#ffe6ea';
