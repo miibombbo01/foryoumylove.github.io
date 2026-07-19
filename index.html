@@ -10,49 +10,40 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 
-    <!-- JALUR PAKSA CSS: Ini akan memaksa perubahan jarak, baris, dan caption muncul -->
+    <!-- CSS perbaikan jarak yang aman tanpa merusak sistem tab bawaan -->
     <style>
-        /* Paksa jarak antar baris di dalam konten surat cinta */
+        /* Mengatur jarak antar baris di dalam surat agar lebih renggang */
         .letter-content p {
-            line-height: 2.3 !important;
+            line-height: 2.2 !important;
             margin-bottom: 15px !important;
         }
 
-        /* Paksa judul Catatan Kecil agar punya jarak ke bawah */
+        /* Memberi jarak di bawah judul Catatan Kecil */
         #notes h2 {
-            margin-bottom: 45px !important;
+            margin-bottom: 35px !important;
         }
 
-        /* Paksa judul Galeri agar punya jarak ke bawah */
+        /* Memberi jarak di bawah judul Pictures of You */
         #gallery h2 {
-            margin-bottom: 45px !important;
+            margin-bottom: 35px !important;
         }
 
-        /* Buat layout galeri vertikal satu per satu agar caption tidak menumpuk */
-        .gallery {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 40px !important; /* Jarak antar kotak foto */
-            align-items: center !important;
-        }
-
-        /* Atur pembungkus foto dan caption */
+        /* Mengatur tiap item foto agar berjarak ke bawah dan teks berada di tengah */
         .gallery-item {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
+            margin-bottom: 40px !important;
+            text-align: center !important;
+            display: inline-block !important; /* Menjaga susunan grid asli bawaan css kamu */
             width: 100% !important;
         }
 
-        /* Paksa tulisan caption di bawah foto agar muncul, miring, dan menggunakan Montserrat */
+        /* Memaksa gaya teks caption di bawah foto */
         .gallery-item p {
             display: block !important;
             font-family: 'Montserrat', sans-serif !important;
             font-style: italic !important;
             font-size: 0.95rem !important;
-            margin-top: 15px !important;
+            margin-top: 12px !important;
             color: #555 !important;
-            text-align: center !important;
         }
     </style>
 </head>
@@ -143,7 +134,7 @@
                 </div>
             </div>
 
-            <!-- Bagian galeri dengan teks caption yang sudah dikunci CSS di atas -->
+            <!-- Bagian galeri -->
             <div class="tab-content" id="gallery">
                 <h2>Pictures of You 🌷</h2>
                 <div class="gallery">
@@ -170,47 +161,6 @@
                     <div class="gallery-item">
                         <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">
                         <p>Forever and always yours 🔐</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Elemen dekorasi melayang -->
-    <div class="heart" style="top: 10%; left: 5%;">❤️</div>
-    <div class="heart" style="top: 20%; right: 10%;">❤️</div>
-    <div class="heart" style="bottom: 15%; left: 15%;">❤️</div>
-    <div class="teddy-bear" style="top: 30%; left: 10%;">🧸</div>
-    <div class="teddy-bear" style="bottom: 10%; right: 5%;">🧸</div>
-
-    <script src="./script.js"></script>
-</body>
-
-</html>
-                    <!-- 1. Setiap item foto kini memiliki caption italic bergaya Montserrat di bawahnya -->
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">You look so beautiful here ✨</p>
-                    </div>
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">My absolute favorite person ❤️</p>
-                    </div>
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Thinking of you every single day 🌸</p>
-                    </div>
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Cutest person in the universe 🧸</p>
-                    </div>
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Omaga you look so stunning 💖</p>
-                    </div>
-                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
-                        <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">
-                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Forever and always yours 🔐</p>
                     </div>
                 </div>
             </div>
