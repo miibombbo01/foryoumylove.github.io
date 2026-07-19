@@ -1,180 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>  <html lang="en">  <head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Happy 1st Monthiversary! ❤️</title>  
+    <link  
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600&display=swap"  
+        rel="stylesheet">  
+    <link rel="stylesheet" href="./style.css">  
+</head>  <body>  
+    <!-- Elemen pemutar audio tersembunyi untuk backsound -->  
+    <audio id="backsound" loop></audio>  <div class="password-modal" id="passwordModal">  
+    <div class="password-content">  
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; font-weight: 700; margin-bottom: 35px;">I have something for you, I hope you like it...</h2>  
+        <button class="submit-btn" id="submitPassword" style="width: 100%; padding: 12px; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 600;">Open Letter ❤️</button>  
+    </div>  
+</div>  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 1st Monthiversary! ❤️</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+<div class="welcome-screen" id="welcomeScreen">  
+    <h1 class="welcome-message">To My Favorite Person 💖</h1>  
+</div>  
 
-    <!-- CSS perbaikan jarak yang aman tanpa merusak sistem tab bawaan -->
-    <style>
-        /* Mengatur jarak antar baris di dalam surat agar lebih renggang */
-        .letter-content p {
-            line-height: 2.2 !important;
-            margin-bottom: 15px !important;
-        }
+<div class="container" id="mainContent" style="display: none;">  
+    <div class="tabs">  
+        <button class="tab active" data-tab="love-letter">  
+            <span>❤️</span> Love Letter  
+        </button>  
+        <button class="tab" data-tab="music">  
+            <span>🎵</span> Music  
+        </button>  
+        <button class="tab" data-tab="notes">  
+            <span>📝</span> Notes  
+        </button>  
+        <button class="tab" data-tab="gallery">  
+            <span>🏞️</span> Gallery  
+        </button>  
+    </div>  
 
-        /* Memberi jarak di bawah judul Catatan Kecil */
-        #notes h2 {
-            margin-bottom: 35px !important;
-        }
+    <div class="content-area">  
+        <div class="tab-content active" id="love-letter">  
+            <h2>My Dearest</h2>  
+            <div class="letter" id="loveLetter">  
+                <div class="letter-header">  
+                    <h3>A Letter For You</h3>  
+                    <span>👇 Click to open</span>  
+                </div>  
+                <div class="letter-content">  
+                    <p>Hai Sayangggg,</p>  
+                    <p>Aku ga jago ngoding. Ini pertama kalinya aku belajar HTML cuma karena pengen bikin sesuatu buat kamu. Jadi kalau masih jelek, jangan ketawain ya. 🤏.</p>  
+                    <p>I cherish every moment we spend together, from our silly inside jokes to our deep  
+                        conversations under the stars. You've shown me what true happiness feels like, and I'm  
+                        forever grateful to have you in my life.</p>  
+                    <p>I love you more than yesterday, less than tomorrow.</p>  
+                    <p>Forever yours,</p>  
+                    <p>Your Man</p>  
+                </div>  
+            </div>  
+        </div>  
 
-        /* Memberi jarak di bawah judul Pictures of You */
-        #gallery h2 {
-            margin-bottom: 35px !important;
-        }
+        <!-- Bagian musik -->  
+        <div class="tab-content" id="music">  
+            <h2>Lagu yg ngingetin aku sama kamu</h2>  
+              
+            <!-- Lagu 1: Only - Leehi -->  
+            <div class="song" data-src="https://files.catbox.moe/exzzyd.mp3" style="cursor: pointer; transition: all 0.2s;">  
+                <div class="song-icon">🎵</div>  
+                <div class="song-info">  
+                    <h4>Only</h4>  
+                    <p>by Leehi</p>  
+                </div>  
+            </div>  
+              
+            <!-- Lagu 2: Still With You - Jungkook -->  
+            <div class="song" data-src="https://files.catbox.moe/fv1ic4.mp3" style="cursor: pointer; transition: all 0.2s;">  
+                <div class="song-icon">🎵</div>  
+                <div class="song-info">  
+                    <h4>Still With You</h4>  
+                    <p>by Jungkook</p>  
+                </div>  
+            </div>  
+        </div>  
 
-        /* Mengatur tiap item foto agar berjarak ke bawah dan teks berada di tengah */
-        .gallery-item {
-            margin-bottom: 40px !important;
-            text-align: center !important;
-            display: inline-block !important; /* Menjaga susunan grid asli bawaan css kamu */
-            width: 100% !important;
-        }
+        <div class="tab-content" id="notes">  
+            <h2>Catatan kecil</h2>  
+            <div class="note">  
+                <p>🤗Semangat yaa sekolahnya</p>  
+            </div>  
+            <div class="note">  
+                <p>✊🥺👊Jangan suka marah, mending suka aku</p>  
+            </div>  
+            <div class="note">  
+                <p>🤓 Take your time kalo lagi badmood</p>  
+            </div>  
+        </div>  
 
-        /* Memaksa gaya teks caption di bawah foto */
-        .gallery-item p {
-            display: block !important;
-            font-family: 'Montserrat', sans-serif !important;
-            font-style: italic !important;
-            font-size: 0.95rem !important;
-            margin-top: 12px !important;
-            color: #555 !important;
-        }
-    </style>
-</head>
+        <!-- Bagian galeri: HANYA berisi 6 foto pacarmu, bunga-bunga lama sudah dibuang -->  
+        <div class="tab-content" id="gallery">  
+            <h2>Pictures of You 🌷</h2>  
+            <div class="gallery">  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">  
+                </div>  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg">  
+                </div>  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg">  
+                </div>  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg">  
+                </div>  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg">  
+                </div>  
+                <div class="gallery-item">  
+                    <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</div>  
 
-<body>
-    <!-- Elemen pemutar audio tersembunyi untuk backsound -->
-    <audio id="backsound" loop></audio>
+<!-- Elemen dekorasi melayang -->  
+<div class="heart" style="top: 10%; left: 5%;">❤️</div>  
+<div class="heart" style="top: 20%; right: 10%;">❤️</div>  
+<div class="heart" style="bottom: 15%; left: 15%;">❤️</div>  
+<div class="teddy-bear" style="top: 30%; left: 10%;">🧸</div>  
+<div class="teddy-bear" style="bottom: 10%; right: 5%;">🧸</div>  
 
-    <div class="password-modal" id="passwordModal">
-        <div class="password-content">
-            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; font-weight: 700; margin-bottom: 35px;">I have something for you, I hope you like it...</h2>
-            <button class="submit-btn" id="submitPassword" style="width: 100%; padding: 12px; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 600;">Open Letter ❤️</button>
-        </div>
-    </div>
-
-    <div class="welcome-screen" id="welcomeScreen">
-        <h1 class="welcome-message">To My Favorite Person 💖</h1>
-    </div>
-
-    <div class="container" id="mainContent" style="display: none;">
-        <div class="tabs">
-            <button class="tab active" data-tab="love-letter">
-                <span>❤️</span> Love Letter
-            </button>
-            <button class="tab" data-tab="music">
-                <span>🎵</span> Music
-            </button>
-            <button class="tab" data-tab="notes">
-                <span>📝</span> Notes
-            </button>
-            <button class="tab" data-tab="gallery">
-                <span>🏞️</span> Gallery
-            </button>
-        </div>
-
-        <div class="content-area">
-            <div class="tab-content active" id="love-letter">
-                <h2>My Little Pony</h2>
-                <div class="letter" id="loveLetter">
-                    <div class="letter-header">
-                        <h3>A Letter For You</h3>
-                        <span>👇 Click to open</span>
-                    </div>
-                    <div class="letter-content">
-                        <p>Hai Sayangggg,</p>
-                        <p>Aku ga jago ngoding. Ini pertama kalinya aku belajar HTML cuma karena pengen bikin sesuatu buat kamu. Jadi kalau masih jelek, jangan ketawain ya. 🤏.</p>
-                        <p>I cherish every moment we spend together, from our silly inside jokes to our deep
-                            conversations under the stars. You've shown me what true happiness feels like, and I'm
-                            forever grateful to have you in my life.</p>
-                        <p>I love you more than yesterday, less than tomorrow.</p>
-                        <p>Forever yours,</p>
-                        <p>Your Man</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bagian musik -->
-            <div class="tab-content" id="music">
-                <h2>Lagu yg ngingetin aku sama kamu</h2>
-                
-                <div class="song" data-src="https://files.catbox.moe/exzzyd.mp3" style="cursor: pointer; transition: all 0.2s;">
-                    <div class="song-icon">🎵</div>
-                    <div class="song-info">
-                        <h4>Only</h4>
-                        <p>by Leehi</p>
-                    </div>
-                </div>
-                
-                <div class="song" data-src="https://files.catbox.moe/fv1ic4.mp3" style="cursor: pointer; transition: all 0.2s;">
-                    <div class="song-icon">🎵</div>
-                    <div class="song-info">
-                        <h4>Still With You</h4>
-                        <p>by Jungkook</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="notes">
-                <h2>Catatan kecil</h2>
-                <div class="note">
-                    <p>🤗Semangat yaa sekolahnya</p>
-                </div>
-                <div class="note">
-                    <p>✊🥺👊Jangan suka marah, mending suka aku</p>
-                </div>
-                <div class="note">
-                    <p>🤓 Take your time kalo lagi badmood</p>
-                </div>
-            </div>
-
-            <!-- Bagian galeri -->
-            <div class="tab-content" id="gallery">
-                <h2>Pictures of You 🌷</h2>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">
-                        <p>You look so beautiful here ✨</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg">
-                        <p>My absolute favorite person ❤️</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg">
-                        <p>Thinking of you every single day 🌸</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg">
-                        <p>Cutest person in the universe 🧸</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg">
-                        <p>Omaga you look so stunning 💖</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">
-                        <p>Forever and always yours 🔐</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Elemen dekorasi melayang -->
-    <div class="heart" style="top: 10%; left: 5%;">❤️</div>
-    <div class="heart" style="top: 20%; right: 10%;">❤️</div>
-    <div class="heart" style="bottom: 15%; left: 15%;">❤️</div>
-    <div class="teddy-bear" style="top: 30%; left: 10%;">🧸</div>
-    <div class="teddy-bear" style="bottom: 10%; right: 5%;">🧸</div>
-
-    <script src="./script.js"></script>
+<script src="./script.js"></script>
 </body>
 
 </html>
