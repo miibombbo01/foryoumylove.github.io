@@ -377,3 +377,15 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ===== Pink Theme ===== */
+body.pink-theme{
+    background: linear-gradient(135deg,#ffd1dc,#ffb7c5);
+    transition: background 0.8s ease;
+}
+
+/* ===== Blue Theme ===== */
+body.blue-theme{
+    background: linear-gradient(135deg,#b8dfff,#8fc8ff);
+    transition: background 0.8s ease;
+}
