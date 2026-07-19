@@ -391,3 +391,30 @@ body.blue-theme{
     background: linear-gradient(135deg,#b8dfff,#8fc8ff);
     transition: background 0.8s ease;
 }
+
+/* ===== BLUE MODE ===== */
+
+body.blue-theme,
+body.blue-theme h2,
+body.blue-theme h3,
+body.blue-theme .tab,
+body.blue-theme .song-icon,
+body.blue-theme .letter h3{
+    color:#1d4e89;
+}
+
+body.blue-theme .tab.active{
+    color:#1d4e89;
+}
+
+body.blue-theme .note{
+    border-left:4px solid #1d4e89;
+}
+
+body.blue-theme .submit-btn{
+    background:#2f7fd8;
+}
+
+body.blue-theme .submit-btn:hover{
+    background:#2268b7;
+    }
