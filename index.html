@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy 1st Monthiversary! ❤️</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -44,13 +44,15 @@
 
         <div class="content-area">
             <div class="tab-content active" id="love-letter">
-                <h2>My Dearest</h2>
+                <!-- 3. Mengubah judul menjadi My Little Pony -->
+                <h2>My Little Pony</h2>
                 <div class="letter" id="loveLetter">
                     <div class="letter-header">
                         <h3>A Letter For You</h3>
                         <span>👇 Click to open</span>
                     </div>
-                    <div class="letter-content">
+                    <!-- 3. Memberikan line-height: 1.8 agar jarak antar baris teks lebih renggang -->
+                    <div class="letter-content" style="line-height: 1.8;">
                         <p>Hai Sayangggg,</p>
                         <p>Aku ga jago ngoding. Ini pertama kalinya aku belajar HTML cuma karena pengen bikin sesuatu buat kamu. Jadi kalau masih jelek, jangan ketawain ya. 🤏.</p>
                         <p>I cherish every moment we spend together, from our silly inside jokes to our deep
@@ -87,7 +89,8 @@
             </div>
 
             <div class="tab-content" id="notes">
-                <h2>Catatan kecil</h2>
+                <!-- 2. Menambahkan margin-bottom agar judul dan kotak catatan tidak terlalu rapat -->
+                <h2 style="margin-bottom: 25px;">Catatan kecil</h2>
                 <div class="note">
                     <p>🤗Semangat yaa sekolahnya</p>
                 </div>
@@ -99,27 +102,35 @@
                 </div>
             </div>
 
-            <!-- Bagian galeri: HANYA berisi 6 foto pacarmu, bunga-bunga lama sudah dibuang -->
+            <!-- Bagian galeri -->
             <div class="tab-content" id="gallery">
-                <h2>Pictures of You 🌷</h2>
+                <!-- 1. Menambahkan margin-bottom agar judul ke area foto memiliki jarak renggang -->
+                <h2 style="margin-bottom: 30px;">Pictures of You 🌷</h2>
                 <div class="gallery">
-                    <div class="gallery-item">
+                    <!-- 1. Setiap item foto kini memiliki caption italic bergaya Montserrat di bawahnya -->
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/MZ52CB4t/IMG-20260621-WA0027.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">You look so beautiful here ✨</p>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/fyL2nVtr/IMG-20260629-WA0035.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">My absolute favorite person ❤️</p>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/prTGbmhc/IMG-20260703-WA0004.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Thinking of you every single day 🌸</p>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/qqRbVNhZ/IMG-20260709-WA0018.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Cutest person in the universe 🧸</p>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/0jQWRzMc/IMG-20260709-WA0025.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Omaga you look so stunning 💖</p>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="margin-bottom: 20px; text-align: center;">
                         <img src="https://i.postimg.cc/qqRbVNhb/IMG-20260711-WA0001.jpg">
+                        <p style="font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 0.9rem; margin-top: 8px; color: #555;">Forever and always yours 🔐</p>
                     </div>
                 </div>
             </div>
