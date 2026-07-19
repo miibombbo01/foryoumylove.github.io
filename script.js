@@ -151,7 +151,7 @@ setTimeout(() => {
         for (let i = 0; i < 15; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = '❤️';
+            heart.innerHTML = '<span class="floating-heart">❤️</span>';
             heart.style.left = Math.random() * 100 + '%';
             heart.style.top = Math.random() * 100 + '%';
             heart.style.animationDelay = Math.random() * 5 + 's';
